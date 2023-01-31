@@ -4,9 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "tauri dev",
+    "build": "tauri build",
     "preview": "astro preview",
     "astro": "astro",
     "tauri": "tauri"
