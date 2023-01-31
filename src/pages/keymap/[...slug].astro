@@ -1,0 +1,18 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import KeymapPost from "@layouts/KeymapPost.astro";
+export async function getStaticPaths() {
+  const posts = await getCollection("keymap");
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"keymap">;
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<KeymapPost {...post.data}>
+  <Content />
+</KeymapPost>
